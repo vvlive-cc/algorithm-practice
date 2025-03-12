@@ -1,4 +1,4 @@
-package com.wyd.algorithm.array.removeelement;
+package com.wyd.algorithm.array._02dualpoint;
 
 /**
  * @Author: wyd

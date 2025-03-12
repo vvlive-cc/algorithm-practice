@@ -1,4 +1,4 @@
-package com.wyd.algorithm.array.binarysearch;
+package com.wyd.algorithm.array._01binarysearch;
 
 /**
  * @Author: wyd

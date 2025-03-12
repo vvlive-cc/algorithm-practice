@@ -1,4 +1,4 @@
-package com.wyd.algorithm.array.removeelement;
+package com.wyd.algorithm.array._02dualpoint;
 
 import java.util.Arrays;
 
@@ -20,6 +20,7 @@ public class _0977_sortedSquares {
         int[] res = new int[nums.length];
 
         while (left <= right) {
+            // 数组平方的最大值就在数组的两端，不是最左边就是最右边，不可能是中间
             if (nums[left] * nums[left] < nums[right] * nums[right]) {
                 res[index--] = nums[right] * nums[right];
                 right--;
