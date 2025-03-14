@@ -34,4 +34,6 @@ public class _0142_detectCycle {
         }
         return null;
     }
+
+    // todo 快慢指针
 }
