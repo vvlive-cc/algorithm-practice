@@ -4,11 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListNode {
-     int val;
-     ListNode next;
-     ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    int val;
+    public ListNode next;
+
+    ListNode() {
+    }
+
+    public ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 
     public void print() {
         List<Integer> list = new ArrayList<>();
@@ -21,18 +30,18 @@ public class ListNode {
     }
 
     public ListNode buildListNode(int[] arr) {
-         ListNode head = new ListNode();
-         ListNode cur = head;
-         for (int i = 0; i < arr.length; i++) {
-             if (i == 0) {
-                 cur.val = arr[i];
-             } else {
-                 ListNode node = new ListNode(arr[i]);
-                 cur.next = node;
-                 cur = node;
-             }
-         }
-         return head;
+        ListNode head = new ListNode();
+        ListNode cur = head;
+        for (int i = 0; i < arr.length; i++) {
+            if (i == 0) {
+                cur.val = arr[i];
+            } else {
+                ListNode node = new ListNode(arr[i]);
+                cur.next = node;
+                cur = node;
+            }
+        }
+        return head;
     }
 
     @Override
