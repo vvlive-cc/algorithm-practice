@@ -13,8 +13,8 @@ import java.util.PriorityQueue;
 public class _0239_maxSlidingWindow {
 
     public static void main(String[] args) {
-        int[] arr = {1};
-        System.out.println((Arrays.toString(maxSlidingWindow(arr, 1))));
+        int[] arr = {1,3,1,2,0,5};
+        System.out.println((Arrays.toString(maxSlidingWindow(arr, 3))));
     }
 
     /**
@@ -40,11 +40,26 @@ public class _0239_maxSlidingWindow {
 //        return res;
 //    }
 
+    /**
+     * 用一个单调队列来存储对应的下标
+     *
+     */
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        int left = 0, right = 0;
         int[] res = new int[nums.length - k + 1];
-        int index = 0;
+        ArrayDeque<Integer> deque = new ArrayDeque<>(k);
 
+        for (int i = 0; i < nums.length; i++) {
+            while (!deque.isEmpty() && deque.peekFirst() < i - k + 1) {
+                deque.pollFirst();
+            }
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.pollLast();
+            }
+            deque.addLast(i);
+            if (i >= k - 1) {
+                res[i - k + 1] = nums[deque.peekFirst()];
+            }
+        }
 
         return res;
     }
